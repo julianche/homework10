@@ -1,0 +1,21 @@
+<p>
+  <strong>Date:</strong>
+  <%= entry.date %>
+</p>
+ 
+<p>
+  <strong>Location:</strong>
+  <%= entry.location %>
+</p>
+
+<p>
+  <strong>Best Memory:</strong>
+  <%= entry.memory %>
+</p>
+
+<p>
+  <%= link_to 'Edit Entry', edit_trip_entry_path(entry.trip, entry) %>
+  <%= link_to 'Destroy Entry', [entry.trip, entry],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

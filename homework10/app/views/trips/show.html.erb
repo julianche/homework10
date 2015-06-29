@@ -1,0 +1,33 @@
+<h1><%= @trip.title %></h1>
+<p>Please read about my adventures in <%= @trip.region %> </p>
+<p> I was there <%= @trip.dates %> </p>
+<p> How I would describe my trip: <%= @trip.description %> </p>
+
+
+<h2> Entries </h2>
+<%= render @trip.entries %>
+
+<h2>Add an entry:</h2>
+<%= form_for([@trip, @trip.entries.build]) do |f| %>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date, :placeholder => 'YYYY/MM/DD' %>
+  </p>
+  </p>
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_area :location, :placeholder => 'Where were you?' %>
+  </p>
+    <p>
+    <%= f.label :memory %><br>
+    <%= f.text_area :memory, :placeholder => 'Favorite part of the day?' %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', trips_path %>
+<%= link_to 'Edit', edit_trip_path(@trip) %>
+<%= link_to 'Destroy', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'} %>
+

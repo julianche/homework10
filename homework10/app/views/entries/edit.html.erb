@@ -1,0 +1,19 @@
+<h1>Edit your entry</h1>
+<%= form_for @entry, url: trip_entry_path do |f| %>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date, :placeholder => 'YYYY/MM/DD' %>
+  </p>
+  </p>
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_area :location, :placeholder => 'Where were you?' %>
+  </p>
+    <p>
+    <%= f.label :memory %><br>
+    <%= f.text_area :memory, :placeholder => 'Favorite part of the day?' %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
